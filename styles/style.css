@@ -2,49 +2,200 @@
 @import url(./reset.css);
 @import url(./fonts.css);
 
+/* 숨긴 콘텐츠 */
+.a11y-hidden {
+  background-color: yellow;
+  display: inline-block;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
 }
+
 html {
   font-size: 10px;
 }
+
 a {
   color: inherit;
   text-decoration: none;
 }
+
 body {
   font-size: 1.4rem;
   color: #222;
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  /* 50%는 X축, 0은 Y축 ->  */
+  background: url(./images/bg_flower.png) no-repeat 50% 0, #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%) no-repeat 0 0;
 }
+
+.group {
+  margin: 0 15px;
+  float: left;
+}
+.group1 {
+  width: 250px;
+}
+.group2 {
+  width: 380px;
+  height: 300px;
+}
+.group3 {
+  width: 190px;
+}
+
 /* 레이아웃 - 셀렉터 그룹핑 */
-.header, .visual, .main, .slogan, .footer-inner {
+.header, 
+.visual, 
+.main, 
+.slogan, 
+.footer-inner {
   width: 940px;
   margin: 0 auto;
 }
+
+/* 헤더 */
 .header {
-  background-color: pink;
+  background: #fff;
   padding: 0 30px;
   border-radius: 0 0 15px 15px;
   position: relative;
 }
+
+/* 로고 */
 .logo {
   position: absolute;
+  top: 55px;
+  left: 60px;
+  z-index: 1;
 }
+
+/* 텍스트 링크 모음 */
 .member{
   text-align: right;
-  font-size: 0;
-  padding: 10px 0;
+  padding: 12px 0 0 0;
 }
+
 .member li {
-  display: inline;
-  background-color: blueviolet;
-  font-size: 14px;
+  display: inline-block;
 }
+
 .member a {
-  padding: 10px;
-  display: inline;
+  padding: 0 10px;
+  display: inherit;
   text-transform: uppercase;
+}
+
+.divider {
+  margin-right: 4px;
+}
+
+/* 메인 메뉴 */
+.navigation {
+  padding-bottom: 40px;
+}
+.menu {
+  border-radius: 0 0  5px 5px;
+  border-top: 2px solid #222;
+  background: darkblue linear-gradient(to bottom,skyblue, darkblue, skyblue);
+  padding-left: 230px;
+  height: 47px; /* 보더 2px 추가되니 주의 */
+  position: relative;
+}
+
+
+.menu-item {
+  float: left;
+  border-left: 2px solid #fff;
+}
+
+.menu-button {
+  border: 0;
+  background: transparent;
+  padding: 0 23px;
+  font-size: 15px;
+  line-height: 45px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.is-active .menu-button {
+  color: violet;
+}
+
+.is-active .menu-button::after {
+  content: "";
+  display: block;
+  border-top: 2px solid #000;
+}
+
+.sub-menu {
+  position: absolute;
+  display: none;
+  padding: 4px 0;
+}
+
+.menu > li:nth-child(-n + 3) {
+  position: relative;
+  /* 서브메뉴 중 3번째까지만 각 부모요소에 왼쪽정렬을 위한 명령 */
+}
+
+.menu-html,
+.menu-css,
+.menu-standards {
+  left: 0;
+}
+
+.menu-accessibility,
+.menu-qna,
+.menu-archive {
+  right: 0;
+}
+
+.is-active .sub-menu {
+  display: block;
+  white-space: nowrap;
+}
+
+.sub-menu li {
+  display: inline-block;
+}
+
+.sub-menu a::before {
+  content: '\e805';
+  font-family: "fontello";
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-left: 0.3em;
+  text-align: center;
+  line-height: 1em;
+  margin-left: 0.4em;
+}
+
+.sub-menu a:hover::before,
+.sub-menu a:focus::before {
+  content: "\e801"
+}
+
+.sub-menu a {
+  display: inline-block;
+  padding: 6px 0;
+}
+
+.sub-menu a:hover,
+.sub-menu a:focus {
+  color: orange;
+}
+
+.visual {
+  height: 120px;
 }
