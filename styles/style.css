@@ -3,7 +3,7 @@
 @import url(./fonts.css);
 
 /* 숨긴 콘텐츠 */
-.a11y-hidden {
+.a11y-hidden, legend {
   background-color: yellow;
   display: inline-block;
   width: 1px;
@@ -33,7 +33,7 @@ body {
   color: #222;
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   /* 50%는 X축, 0은 Y축 ->  */
-  background: url(./images/bg_flower.png) no-repeat 50% 0, #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%) no-repeat 0 0;
+  background: url(./images/bg_flower.png) no-repeat 50% 20%, #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%) no-repeat 0 0;
 }
 
 .group {
@@ -41,14 +41,19 @@ body {
   float: left;
 }
 .group1 {
+  background: yellow;
   width: 250px;
+  height: 300px;
 }
 .group2 {
+  background: pink;
   width: 380px;
   height: 300px;
 }
 .group3 {
+  background: blue;
   width: 190px;
+  height: 300px;
 }
 
 /* 레이아웃 - 셀렉터 그룹핑 */
@@ -169,6 +174,11 @@ body {
   display: inline-block;
 }
 
+.sub-menu a {
+  display: inline-block;
+  padding: 6px 0;
+}
+
 .sub-menu a::before {
   content: '\e805';
   font-family: "fontello";
@@ -186,16 +196,135 @@ body {
   content: "\e801"
 }
 
-.sub-menu a {
-  display: inline-block;
-  padding: 6px 0;
-}
-
 .sub-menu a:hover,
 .sub-menu a:focus {
   color: orange;
 }
 
+/* 비쥬얼(날아가는 글자, 꽃) */
+@keyframes moveEffect {
+  0% {
+    font-size: 14px;
+    color: rgba(0,0,0,0);
+    transform: translate(0, 0);
+  }
+  100% {
+    font-size: 24px;
+    color: rgba(0,0,0,1);
+    transform: translate(400px, 80px);
+  }
+}
+@keyframes fadeEffect {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .visual {
   height: 120px;
+  position: relative;
+}
+
+.visual-text {
+  position: absolute;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  animation: moveEffect 800ms ease-in-out forwards;
+  z-index: 1;
+}
+
+.visual::before,
+.visual::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: fadeEffect 2000ms infinite alternate;
+}
+
+.visual::before{
+  background: url(./images/ani_flower_01.png) no-repeat 30% 20px, url(./images/ani_flower_02.png) no-repeat 55% 0px;
+}
+.visual::after{
+  background: url(./images/ani_flower_03.png) no-repeat 95% 0px, url(./images/ani_flower_04.png) no-repeat 5% 30px;
+  animation-delay: 1200ms;
+}
+
+/* 메인 */
+.main {
+  background: #fff;
+  display: flow-root; 
+  padding: 30px 15px;
+  min-height: 450px;
+  border-radius: 15px 15px;
+  /* overflow: hidden; */
+}
+
+/* 로그인 영역 */
+.login {
+  padding: 15px;
+  background: skyblue radial-gradient(circle at right top,skyblue,darkblue);
+  border-radius: 5px;
+}
+
+.login-title {
+  font-size: large;
+  font-weight: bold;
+  color: violet;
+}
+
+.login-form {
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.login fieldset {
+  position: relative;
+}
+
+.login-form label {
+  display: inline-block;
+  width: 4em;
+  line-height: 20px;
+}
+
+
+.login-form input {
+  font-size: 10px;
+  text-indent: 0.2em;
+  width: 85px;
+  height: 20px;
+  
+}
+
+.user-email {
+  padding-bottom: 5px;
+}
+
+.user-pw {
+  padding-bottom: 10px;
+}
+
+.login-button {
+  background: darkblue;
+  color: #fff;
+  font-size: 13px;
+  border: none;
+  border-radius: 3px;
+  width: 46px;
+  height: 46px;
+  position: absolute;
+  top: 0px;
+  right: 0;
+}
+
+.sign {
+  border-top: 1px solid #eee;
+  padding-top: 10px;
 }
