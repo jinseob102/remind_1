@@ -41,7 +41,6 @@ body {
   float: left;
 }
 .group1 {
-  background: yellow;
   width: 250px;
   height: 300px;
 }
@@ -326,5 +325,82 @@ body {
 
 .sign {
   border-top: 1px solid #eee;
-  padding-top: 10px;
+  padding-top: 5px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
 }
+
+.sign a::before{
+  content: "\e803";
+  font-family: "fontello";
+  margin-right: 5px;
+  color: darkblue;
+  text-shadow: 1px 1px 1px #ccc;
+}
+
+.validation li{
+  margin-top: 10px;
+}
+
+.validation a{
+  display: block;
+  border: 2px solid #aaa;
+  background: url(./images/validation_icon.png) no-repeat 10px 50%, linear-gradient(to bottom, #aaa, #eee);
+  border-radius: 20px;
+  padding: 8px 30px;
+}
+
+/* 웹 관련 용어 */
+.term {
+  margin-top: 15px;
+  background: linear-gradient(to top, #ccc, #eee);
+  border: 2px solid #aaa;
+  border-radius: 5px;
+  padding: 15px 10px;
+}
+
+.term-list div{
+  margin-top: 10px;
+  display: flow-root;
+}
+
+.term-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.term-list-subject,
+.term-list-brief {
+  float: right;
+  width: 140px;
+}
+
+.term-list-subject {
+  font-weight: 500;
+  color: rgb(36, 99, 215);
+}
+
+.term-list-thumbnail {
+  float: left;
+}
+
+.term-list-thumbnail img {
+  vertical-align: middle; /* 이미지 아래 살짝나온 갭을 없애기 위해 배치하는 것 */
+}
+
+.term-list-brief {
+  line-height: 1.5;
+}
+
+.cross .term-list-subject,
+.cross .term-list-brief {
+  float: left;
+  width: 140px;
+}
+
+.cross .term-list-thumbnail {
+  float: right;
+}
+
+
