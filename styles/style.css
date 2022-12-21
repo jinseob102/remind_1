@@ -5,7 +5,7 @@
 /* 숨긴 콘텐츠 */
 .a11y-hidden, legend {
   background-color: yellow;
-  display: inline-block;
+  position: absolute;
   width: 1px;
   height: 1px;
   margin: -1px;
@@ -45,7 +45,6 @@ body {
   height: 300px;
 }
 .group2 {
-  background: pink;
   width: 380px;
   height: 300px;
 }
@@ -339,6 +338,7 @@ body {
   text-shadow: 1px 1px 1px #ccc;
 }
 
+/* 유효성 검사 */
 .validation li{
   margin-top: 10px;
 }
@@ -403,4 +403,156 @@ body {
   float: right;
 }
 
+/* 검색 폼 */
+.search-form{
+  background: linear-gradient(to bottom, #aaa, #eee);
+  border-radius: 15px 15px 0 0;
+  border: 1px solid #aaa;
+}
+
+.search-form-inner {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 15px 15px;
+
+}
+
+.form-group {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.form-group-label {
+  flex-shrink: 0;
+  margin-right: 10px;
+
+}
+
+.form-group-input {
+  flex-grow: 1;
+  line-height: 20px;
+}
+
+/* 공지사항 및 자료실 */
+
+.board {
+  margin-top: 20px;
+  position: relative;;
+}
+
+.tab-list {
+  display: flex;
+}
+
+.tab-list button {
+  background: linear-gradient(to bottom, #aaa, #eee);
+  border-radius: 5px 5px 0 0;
+  border: 1px solid #aaa;
+  padding: 5px 10px
+}
+
+.is-select.tab {
+  background: white;
+  border-radius: 5px 5px 0 0;
+  border: 2px solid darkblue;
+  border-bottom: none;
+}
+
+.board-list {
+  padding: 15px 5px;
+}
+
+.board-list li{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  line-height: 2;  
+}
+
+.board-list li:hover{
+  color: rgb(36, 99, 215);
+}
+
+.board-list a{
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+padding-right: 10px;
+}
+
+.tab-pannel {
+  display: none;
+}
+
+.is-select.tab-pannel{
+  display: block;
+}
+
+.board-more {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+
+/* 새소식 */
+.news {
+  position: relative;
+}
+
+.news-title {
+  font-size: 1.2em;
+  font-weight: 700;
+  color:rgb(36, 99, 215);
+  padding: 15px 0;
+}
+
+.news::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 80%;
+  height: 1px;
+  background: #aaa linear-gradient(to right, #ccc 0%, #ccc 70%, #fff);
+}
+
+.news-link {
+  display: block;
+}
+
+.news-item{
+  position: relative;
+  padding-left: 130px;
+}
+
+.news-item-title {
+  font-weight: 700;
+}
+
+.news-item-date {
+  display: block;
+  margin-top: 5px;
+}
+
+.news-item-brief {
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.news-item-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+.news-more {
+  position: absolute;
+  right: 5px;
+  top: -35px;
+}
+
+/*  */
 

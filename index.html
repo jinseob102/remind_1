@@ -194,9 +194,100 @@
     <!-- 두번째 그룹 -->
     <div class="group group2">
       <!-- 검색 폼 -->
+      <h2 class="a11y-hidden">검색</h2>
+      <form method="POST" action="https://formspree.io/jinseob102@gmail.com" class="search-form">
+        <fieldset>
+          <legend>검색 폼</legend>
+          <div class="search-form-inner">
+            <div class="form-group">
+              <label for="search" class="form-group-label"><span class="icon-search" aria-hidden="true"></span>자료 검색</label>
+              <input type="search" id="search" class="form-group-input" placeholder="검색어를 입력하세요." required />
+            </div>
+            <button class="search-button">검색</button>
+          </div>
+        </fieldset>
+      </form>
+      <!-- 공지사항 및 자료실 -->
+      <div class="board">
+        <ul class="tab-list">
+          <button class="tab is-select" type="button" aria-selected="true" aria-controls="notice" role="tab" id="noticeButton">공지사항</button>
+          <button class="tab" type="button" aria-selected="false" aria-controls="archive" role="tab" id="archiveButton">자료실</button>
+        </ul>
+        <div class="notice tab-pannel is-select" role="tabpanel" id="notice" aria-labelledby="noticeButton">
+          <ul class="board-list">
+            <li>
+              <a class="icon-stop" href="/">HTML의 모든 것을 알려주마 샘플 활용법</a>
+              <time datetime="2022-12-12T13:53:45">2022.12.12</time>
+            </li>
+            <li>
+              <a class="icon-stop" href="/">W3C 사이트 리뉴얼 및 공지사항</a>
+              <time datetime="2022-12-12T13:53:45">2022.12.12</time>
+            </li>
+            <li>
+              <a class="icon-stop" href="/">KWCAG 2.1 소식</a>
+              <time datetime="2022-12-12T13:53:45">2022.12.12</time>
+            </li>
+            <li>
+              <a class="icon-stop" href="/">서버 점검으로 인한 사이트 이용안내 입니다.</a>
+              <time datetime="2022-12-12T13:53:45">2022.12.12</time>
+            </li>
+            <li>
+              <a class="icon-stop" href="/">여러분들이 생각하는 웹 접근성에 대해 이야기를 나누어 봅시다.</a>
+              <time datetime="2022-12-12T13:53:45">2022.12.12</time>
+            </li>
+          </ul>
+          <a href="/" class="board-more icon-plus" aria-labelledby="noticeButton">더보기</a>
+        </div>
+        <div class="archive tab-pannel" role="tabpanel" id="archive"                aria-labelledby="archiveButton">
+          <ul class="board-list">
+            <li>
+              <a class="icon-stop" href="/">HTML의 모든 것을 알려주마 샘플 활용법</a>
+              <time datetime="2022-12-21T13:53:45">2022.12.12</time>
+            </li>
+            <li>
+              <a class="icon-stop" href="/">W3C 사이트 리뉴얼 및 공지사항</a>
+              <time datetime="2022-12-21T13:53:45">2022.12.21</time>
+            </li>
+            <li>
+              <a class="icon-stop" href="/">KWCAG 2.1 소식</a>
+              <time datetime="2022-12-21T13:53:45">2022.12.21</time>
+            </li>
+            <li>
+              <a class="icon-stop" href="/">서버 점검으로 인한 사이트 이용안내 입니다.</a>
+              <time datetime="2022-12-21T13:53:45">2022.12.21</time>
+            </li>
+            <li>
+              <a class="icon-stop" href="/">여러분들이 생각하는 웹 접근성에 대해 이야기를 나누어 봅시다.</a>
+              <time datetime="2022-12-21T13:53:45">2022.12.21</time>
+            </li>
+          </ul>
+          <a href="/" class="board-more icon-plus" aria-labelledby="archiveButton">더보기</a>
+        </div>
+      </div>
+      <!-- 새소식 -->
+      <section class="news">
+        <h2 class="news-title">새소식</h2>
+        <a href="" class="news-link">
+          <article class="news-item">
+            <h3 class="news-item-title">W3C 사이트가 리뉴얼 되었습니다.</h3>
+            <time class="news-item-date" datetime="2022-12-13T16:19:23">2022.12.13</time>
+            <p class="news-item-brief">디자인 및 다양한 view 환경을 고려하여 구성되어 있으며,
+              기존보다 최신 정보 및 개발자를 위한 기술 가이드도
+              찾기 쉽도록 구성되어 있습니다.
+            </p>
+            <figure class="news-item-thumbnail">
+              <img src="./assets/news.gif" alt="W3C 사이트가 HTML5 발표 후 새롭게 리뉴얼 된 모습" />
+              <figcaption>W3C 리뉴얼</figcaption>
+            </figure>
+            <a href="/" class="news-more icon-plus" title="">새소식</a>
+          </article>
+        </a>
+      </section>
+    </div>
+    <!-- 세번째 그룹 -->
+    <div class="group group3">
       
     </div>
-    <div class="group group3"></div>
   </main>
   <article class="slogan">
   </article>
